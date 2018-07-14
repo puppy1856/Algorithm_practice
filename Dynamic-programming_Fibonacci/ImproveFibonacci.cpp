@@ -39,11 +39,13 @@ void fib()
     //重置答案陣列
     for (int scan = 0; scan <= index; scan++)
         fibArray[scan] = -1;
+    
+    cout << "Fibonacci : " << index << " answer is " << fib(index, fibArray) << endl;
+
     /* 列印過程
     for (int a = 0; a <= index; a++)
         cout << fib(a, fibArray) << endl;
     */
-    cout << "Fibonacci : " << index << " answer is " << fib(index, fibArray) << endl;
 
     delete[] fibArray;
     }
