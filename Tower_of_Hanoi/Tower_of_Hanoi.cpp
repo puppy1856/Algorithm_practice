@@ -2,6 +2,7 @@
 #include <stdlib.h>
 using namespace std;
 
+//src->起始點, Dest->終點, Aux->輔助點
 void Towers(int Disk, string Src, string Dest, string Aux)
 {
     if (Disk == 1)
