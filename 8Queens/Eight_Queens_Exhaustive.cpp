@@ -24,7 +24,7 @@ bool searchAns(int row)
     for (int col = 0; col < NUMBER_OF_QUEENS; col++)
     {   //窮舉放置皇后位置"第一個皇后永遠放在第一行"
         queens[row] = col;
-        //確認皇后位置合法性 && 每一列放置8個皇后
+        //確認皇后位置合法性 && 每一列放置1個皇后
         if(isValid(row,col) && searchAns(row + 1))
             return true;
     }
