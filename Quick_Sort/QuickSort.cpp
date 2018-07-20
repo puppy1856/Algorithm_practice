@@ -3,13 +3,15 @@
 using namespace std;
 
 /*
-從數列找出一個元素作為 pivot
+QuickSort
+從數列找出一個元素作為 pivot,本程式直接使用數列最末之元素
 將 pivot 移動到數列末端
 設定一個指標指向數列前端，用來記錄小於 pivot 的元素的放置位置
 接下來開始遍歷所有元素（除了 pivot）
 若當前元素小於 pivot，就將該元素換到指標所指向的位置，且將指標往下一個位置移動
 若當前元素大於等於 pivot 則跳過不做任何動作
 當所有元素遍歷後，再將 pivot 與指標作指向的最後一個位置的元素交換
+將pivot之左端視為另一條數列(右端同上)再次進行Sort,直至無法分裂為止
 */
 void Swap(int* array, int a, int b)
 {
@@ -26,12 +28,10 @@ void QuickSort(int* array, int first, int end)
     else
     {
         int index = first;
-        for (int count = index; count < end-1; count++)
+        for (int count = index; count < (end-1); count++)
         {
             if(array[count] < array[end-1])
-            {
                 Swap(array, index++, count);
-            }
         }
         Swap(array, index, end-1);
 
@@ -51,7 +51,7 @@ void printArray(int* array,int size)
 
 int main()
 {
-    cout << "Please enter the Size of Array : ";
+    cout << "Please enter the size of array : ";
     int sizeOfArray;
     cin >> sizeOfArray;
     int *array = new int[sizeOfArray];
